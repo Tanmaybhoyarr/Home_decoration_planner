@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Renovation Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Home Renovation Planner</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#visualization">Project Visualization</a></li>
+            <li><a href="#inspiration">Design Inspiration</a></li>
+            <li><a href="#cost">Cost Estimator</a></li>
+            <li><a href="#budget">Budget Breakdown</a></li>
+            <li><a href="#contractors">Contractor Directory</a></li>
+            <li><a href="#timeline">Project Timeline</a></li>
+            <li><a href="#tasks">Task Management</a></li>
+            <li><a href="#progress">Progress Tracking</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="visualization">
+            <h2>Project Visualization</h2>
+            <canvas id="visualizationCanvas" width="600" height="400"></canvas>
+            <div class="button-group">
+                <button onclick="startDrawing()">Start Drawing</button>
+                <button onclick="stopDrawing()">Stop Drawing</button>
+                <button onclick="clearCanvas()">Clear</button>
+            </div>
+        </section>
+        <section id="inspiration">
+            <h2>Design Inspiration</h2>
+            <div class="carousel">
+                <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <div class="carousel-images">
+                    <img src="image1.jpeg" alt="Inspiration 1">
+                    <img src="image2.jpeg" alt="Inspiration 2">
+                    <img src="image3.jpeg" alt="Inspiration 3">
+                </div>
+                <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </section>
+        <section id="cost">
+            <h2>Cost Estimator</h2>
+            <form id="costEstimatorForm">
+                <label for="area">Area (sq ft):</label>
+                <input type="number" id="area" name="area">
+                <label for="costPerSqFt">Cost per sq ft:</label>
+                <input type="number" id="costPerSqFt" name="costPerSqFt">
+                <button type="button" onclick="estimateCost()">Estimate Cost</button>
+            </form>
+            <p id="estimatedCost"></p>
+        </section>
+        <section id="budget">
+            <h2>Budget Breakdown</h2>
+            <form id="budgetForm">
+                <label for="item">Item:</label>
+                <input type="text" id="item" name="item">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount">
+                <button type="button" onclick="addBudgetItem()">Add Item</button>
+            </form>
+            <ul id="budgetList"></ul>
+            <p id="totalBudget"></p>
+        </section>
+        <section id="contractors">
+            <h2>Contractor Directory</h2>
+            <ul id="contractorList">
+                <li>Contractor 1: <a href="tel:9354687518">9354687518</a></li>
+                <li>Contractor 2: <a href="tel:8754832154">8754832154</a></li>
+                <!-- Add more contractors as needed -->
+            </ul>
+        </section>
+        <section id="timeline">
+            <h2>Project Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-progress" id="timelineProgress"></div>
+                <ul id="timelineList">
+                    <li>Design Phase - Jan 1 to Jan 15</li>
+                    <li>Planning Phase - Jan 16 to Jan 31</li>
+                    <li>Construction Phase - Feb 1 to Mar 15</li>
+                    <!-- Add more timeline entries as needed -->
+                </ul>
+            </div>
+        </section>
+        <section id="tasks">
+            <h2>Task Management</h2>
+            <form id="taskForm">
+                <label for="task">New Task:</label>
+                <input type="text" id="task" name="task">
+                <label for="taskDescription">Description:</label>
+                <input type="text" id="taskDescription" name="taskDescription">
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate">
+                <button type="button" onclick="addTask()">Add Task</button>
+            </form>
+            <ul id="taskList"></ul>
+        </section>
+        <section id="progress">
+            <h2>Progress Tracking</h2>
+            <label for="progressRange">Progress:</label>
+            <input type="range" id="progressRange" name="progressRange" min="0" max="100" value="0" oninput="updateProgress()">
+            <p id="progressText">0%</p>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
